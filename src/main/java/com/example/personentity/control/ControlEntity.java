@@ -20,4 +20,8 @@ public class ControlEntity {
     public List getCity(@RequestParam String city){
         return repositoryEntity.getPersons(city);
     }
+    @GetMapping("/persons/by-name")
+    public List getStreet(@RequestParam String name){
+        return repositoryEntity.getStreet(name);
+    }
 }

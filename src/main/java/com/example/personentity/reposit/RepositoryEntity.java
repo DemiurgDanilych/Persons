@@ -23,4 +23,15 @@ public class RepositoryEntity {
 
         return query.getResultList();
     }
+
+    /*
+   SELECT product_name FROM orders o
+         join customers c on c.id = o.customer_id
+         WHERE c.name = :name
+    */
+    public List getStreet(String name) {
+        Query query = entityManager.createQuery("select c from Contact c join Persons p on p.name = c.street where c.street = :street", Persons.class);
+        query.setParameter("street", name);
+        return query.getResultList();
+    }
 }

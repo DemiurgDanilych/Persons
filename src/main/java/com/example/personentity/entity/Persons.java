@@ -1,8 +1,6 @@
 package com.example.personentity.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -21,4 +19,7 @@ public class Persons {
     private String phone_number;
     @Column(nullable = false)
     private String city_of_living;
+
+//    @ManyToOne
+//    public Contact contact;
 }
