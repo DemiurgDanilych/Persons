@@ -1,7 +1,6 @@
 package com.example.personentity.control;
 
-import com.example.personentity.entity.Persons;
-import com.example.personentity.reposit.RepositoryEntity;
+import com.example.personentity.repository.RepositoryEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
