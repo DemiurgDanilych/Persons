@@ -1,15 +1,14 @@
 package com.example.personentity.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
+@Entity
 @Table(name = "persons")
 public class Persons {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private int id;
     @Id
     @Column(nullable = false)
     private String name;
@@ -17,11 +16,12 @@ public class Persons {
     private String surname;
     @Column(nullable = false)
     private int age;
-    @Column(length = 11)
-    private String phone_number;
-    @Column(nullable = false)
-    private String city_of_living;
+    @Column(name = "phone",length = 11)
+    private String phoneNumber;
+    @Column(name = "city",nullable = false)
+    private String cityOfLiving;
     @OneToOne(optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "contact_id")
+    @JoinColumn(name = "contactId")
     private Contact contact;
+
 }

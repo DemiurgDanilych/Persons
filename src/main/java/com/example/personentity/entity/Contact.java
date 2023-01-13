@@ -1,8 +1,10 @@
 package com.example.personentity.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "contact")
@@ -12,6 +14,5 @@ public class Contact {
     private String street;
     @Column(nullable = false)
     private int number;
-    @OneToOne(mappedBy = "contact", cascade = CascadeType.ALL)
-    private Persons persons;
+
 }
