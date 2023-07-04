@@ -1,7 +1,6 @@
 package com.example.personentity.control;
 
-import com.example.personentity.entity.Persons;
-import com.example.personentity.reposit.RepositoryEntity;
+import com.example.personentity.repository.RepositoryEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +18,9 @@ public class ControlEntity {
     @GetMapping("/persons/by-city")
     public List getCity(@RequestParam String city){
         return repositoryEntity.getPersons(city);
+    }
+    @GetMapping("/persons/by-name")
+    public List getStreet(@RequestParam String name){
+        return repositoryEntity.getStreet(name);
     }
 }
